@@ -1,4 +1,4 @@
-# Moje Portfolio 🚀
+# Moje Portfolio
 
 ### Opis projektu
 Aplikacja Portfolio to moja osobista wizytówka w sieci, stworzona w celu prezentacji moich projektów, umiejętności technicznych oraz ścieżki zawodowej. Projekt został zaprojektowany z myślą o przejrzystości (UX) oraz pełnej responsywności (RWD).
