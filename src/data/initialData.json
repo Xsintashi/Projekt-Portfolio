@@ -1,0 +1,34 @@
+{
+  "profile": {
+    "name": "Jan Kowalski",
+    "title": "Student Informatyki",
+    "description": "Pasjonat programowania aplikacji mobilnych i webowych. Zawsze chętny do nauki nowych technologii.",
+    "skills": [
+      "React Native",
+      "JavaScript",
+      "HTML/CSS",
+      "Node.js",
+      "Expo",
+      "C++",
+      "Java",
+      "Assembly (MASM)"
+    ],
+    "avatar": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+    "email": "jan.kowalski@student.uczelnia.pl",
+    "github": "github.com/xsintashi"
+  },
+  "projects": [
+    {
+      "id": "1",
+      "title": "Arkiiva",
+      "description": "Discord Bot archiwizujący profile i utwory z aplikacji Soundcloud.",
+      "technologies": "JavaScript, Discord.JS, SQL"
+    },
+    {
+      "id": "2",
+      "title": "Kalkulator",
+      "description": "Kalkulator napisany w x86 assembly dla systemów 16-bitowych.",
+      "technologies": "Assembly (MASM)"
+    }
+  ]
+}
