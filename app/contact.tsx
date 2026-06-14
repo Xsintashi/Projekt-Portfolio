@@ -15,21 +15,21 @@ export default function ContactScreen() {
             <Text style={styles.sectionTitle}>E-mail</Text>
             <Text style={styles.emailText}>{email}</Text>
           </View>
-          
+
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>GitHub</Text>
             <Text style={styles.linkText}>{github}</Text>
           </View>
-          
-          <TouchableOpacity 
-            style={[styles.button, { backgroundColor: '#4f46e5' }]} 
+
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: '#4f46e5' }]}
             onPress={() => Linking.openURL(`mailto:${email}`)}
           >
             <Text style={styles.buttonText}>Wyślij e-mail</Text>
           </TouchableOpacity>
-          
-          <TouchableOpacity 
-            style={[styles.button, { backgroundColor: '#0f172a' }]} 
+
+          <TouchableOpacity
+            style={[styles.button, { backgroundColor: '#0f172a' }]}
             onPress={() => Linking.openURL(github)}
           >
             <Text style={styles.buttonText}>Otwórz GitHub</Text>

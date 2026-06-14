@@ -22,13 +22,22 @@
       "id": "1",
       "title": "Arkiiva",
       "description": "Discord Bot archiwizujący profile i utwory z aplikacji Soundcloud.",
-      "technologies": "JavaScript, Discord.JS, SQL"
+      "technologies": "JavaScript, Discord.JS, SQL",
+      "year": 2024
     },
     {
       "id": "2",
       "title": "Kalkulator",
       "description": "Kalkulator napisany w x86 assembly dla systemów 16-bitowych.",
-      "technologies": "Assembly (MASM)"
+      "technologies": "Assembly (MASM)",
+      "year": 2024
+    },
+    {
+      "id": "3",
+      "title": "Azurre-CS2-Server-Blocker",
+      "description": "Blocker Regionalnych serwerów gry Counter-Strike: 2 bazujacy na windowsowym firewall.",
+      "technologies": "c++",
+      "year": 2025
     }
   ]
 }

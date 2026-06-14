@@ -24,7 +24,7 @@ const initialProjects: Project[] = initialData.projects.map(p => ({
   name: p.title,
   description: p.description,
   technologies: p.technologies.split(',').map(t => t.trim()),
-  year: 2024 // Domyślny rok dla starych danych
+  year: (p as any).year || 2026
 }));
 
 export function ProjectsProvider({ children }: { children: React.ReactNode }) {
