@@ -40,10 +40,10 @@ export function ProjectsProvider({ children }: { children: React.ReactNode }) {
           id: p.id,
           name: p.name || p.title || 'Brak nazwy',
           description: p.description || '',
-          technologies: Array.isArray(p.technologies) 
-            ? p.technologies 
+          technologies: Array.isArray(p.technologies)
+            ? p.technologies
             : (typeof p.technologies === 'string' ? p.technologies.split(',').map((t: string) => t.trim()) : []),
-          year: p.year || 2024
+          year: p.year || 2026
         }));
         setProjects(normalized);
       } else {
