@@ -22,14 +22,14 @@ export default function ContactScreen() {
           </View>
           
           <TouchableOpacity 
-            style={[styles.button, { backgroundColor: '#3b82f6' }]} 
+            style={[styles.button, { backgroundColor: '#4f46e5' }]} 
             onPress={() => Linking.openURL(`mailto:${email}`)}
           >
             <Text style={styles.buttonText}>Wyślij e-mail</Text>
           </TouchableOpacity>
           
           <TouchableOpacity 
-            style={[styles.button, { backgroundColor: '#333333' }]} 
+            style={[styles.button, { backgroundColor: '#0f172a' }]} 
             onPress={() => Linking.openURL(github)}
           >
             <Text style={styles.buttonText}>Otwórz GitHub</Text>
@@ -41,14 +41,14 @@ export default function ContactScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f2f4f8' },
+  container: { flex: 1, backgroundColor: '#f8fafc' },
   scrollContent: { padding: 20 },
-  header: { fontSize: 28, fontWeight: 'bold', textAlign: 'center', marginTop: 40, marginBottom: 20 },
-  card: { backgroundColor: '#ffffff', borderRadius: 12, padding: 20, elevation: 3, shadowColor: '#000', shadowOpacity: 0.1, shadowRadius: 6, shadowOffset: { width: 0, height: 2 } },
+  header: { fontSize: 28, fontWeight: 'bold', textAlign: 'center', marginTop: 40, marginBottom: 20, color: '#0f172a' },
+  card: { backgroundColor: '#ffffff', borderRadius: 16, padding: 24, elevation: 2, shadowColor: '#0f172a', shadowOpacity: 0.05, shadowRadius: 10, shadowOffset: { width: 0, height: 2 } },
   section: { marginBottom: 20 },
-  sectionTitle: { fontSize: 18, fontWeight: '600', marginBottom: 8 },
-  emailText: { fontSize: 15, color: '#3b82f6', marginBottom: 16 },
-  linkText: { fontSize: 15, color: '#333', marginBottom: 16 },
-  button: { paddingVertical: 12, paddingHorizontal: 24, borderRadius: 8, alignItems: 'center', marginTop: 12 },
-  buttonText: { color: '#ffffff', fontSize: 16, fontWeight: '600' }
+  sectionTitle: { fontSize: 16, fontWeight: 'bold', color: '#64748b', textTransform: 'uppercase', trackingLetter: 1, marginBottom: 6 },
+  emailText: { fontSize: 16, color: '#4f46e5', fontWeight: '600' },
+  linkText: { fontSize: 16, color: '#0f172a', fontWeight: '500' },
+  button: { paddingVertical: 14, paddingHorizontal: 24, borderRadius: 12, alignItems: 'center', marginTop: 12, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 6, shadowOffset: { width: 0, height: 3 }, elevation: 2 },
+  buttonText: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' }
 });

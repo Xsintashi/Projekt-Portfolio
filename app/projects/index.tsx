@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Alert, SafeAreaView } from 'react-native';
 import { useRouter } from 'expo-router';
 import { useProjects } from '../../context/ProjectsContext';
+import ProjectCard from '../../src/components/ProjectCard';
 
 export default function ProjectsListScreen() {
   const router = useRouter();
@@ -42,22 +43,11 @@ export default function ProjectsListScreen() {
         keyExtractor={(item) => item.id}
         contentContainerStyle={styles.listContent}
         renderItem={({ item }) => (
-          <TouchableOpacity 
-            style={styles.card} 
+          <ProjectCard
+            project={item}
             onPress={() => router.push(`/projects/${item.id}`)}
-          >
-            <View style={styles.cardHeader}>
-              <Text style={styles.projectName}>{item.name}</Text>
-              <TouchableOpacity 
-                style={styles.deleteButton} 
-                onPress={() => confirmDelete(item.id, item.name)}
-              >
-                <Text style={styles.deleteButtonText}>Usuń</Text>
-              </TouchableOpacity>
-            </View>
-            <Text style={styles.projectDesc} numberOfLines={2}>{item.description}</Text>
-            <Text style={styles.projectYear}>Rok: {item.year}</Text>
-          </TouchableOpacity>
+            onDelete={() => confirmDelete(item.id, item.name)}
+          />
         )}
       />
 
@@ -72,19 +62,12 @@ export default function ProjectsListScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f2f4f8' },
+  container: { flex: 1, backgroundColor: '#f8fafc' },
   headerRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginHorizontal: 20, marginTop: 40, marginBottom: 20 },
-  header: { fontSize: 28, fontWeight: 'bold' },
-  sortButton: { backgroundColor: '#e2e8f0', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16 },
-  sortButtonText: { color: '#334155', fontWeight: '600', fontSize: 14 },
+  header: { fontSize: 28, fontWeight: 'bold', color: '#0f172a' },
+  sortButton: { backgroundColor: '#e0e7ff', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 16 },
+  sortButtonText: { color: '#4338ca', fontWeight: '600', fontSize: 14 },
   listContent: { paddingHorizontal: 20, paddingBottom: 80 },
-  card: { backgroundColor: '#ffffff', borderRadius: 10, padding: 16, marginBottom: 12, elevation: 2, shadowColor: '#000', shadowOpacity: 0.08, shadowRadius: 4, shadowOffset: { width: 0, height: 1 } },
-  cardHeader: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 8 },
-  projectName: { fontSize: 18, fontWeight: 'bold', flex: 1 },
-  deleteButton: { backgroundColor: '#ef4444', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 6 },
-  deleteButtonText: { color: '#fff', fontSize: 12, fontWeight: 'bold' },
-  projectDesc: { fontSize: 14, color: '#666666', marginBottom: 8 },
-  projectYear: { fontSize: 12, color: '#94a3b8', fontWeight: '600' },
-  addButton: { backgroundColor: '#10b981', paddingVertical: 12, borderRadius: 8, alignItems: 'center', marginHorizontal: 20, marginBottom: 16 },
-  addButtonText: { color: '#ffffff', fontSize: 16, fontWeight: '600' }
+  addButton: { backgroundColor: '#4f46e5', paddingVertical: 14, borderRadius: 12, alignItems: 'center', marginHorizontal: 20, marginBottom: 16, shadowColor: '#4f46e5', shadowOpacity: 0.2, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 3 },
+  addButtonText: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' }
 });

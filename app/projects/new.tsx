@@ -95,16 +95,16 @@ export default function NewProjectScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f2f4f8' },
+  container: { flex: 1, backgroundColor: '#f8fafc' },
   scrollContent: { padding: 20 },
-  header: { fontSize: 26, fontWeight: 'bold', marginBottom: 24, textAlign: 'center' },
-  label: { fontSize: 14, fontWeight: '600', marginTop: 12, marginBottom: 6, color: '#374151' },
-  input: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#d1d5db', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 15 },
+  header: { fontSize: 26, fontWeight: 'bold', marginBottom: 24, textAlign: 'center', color: '#0f172a' },
+  label: { fontSize: 14, fontWeight: '600', marginTop: 12, marginBottom: 6, color: '#475569' },
+  input: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#cbd5e1', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 10, fontSize: 15, color: '#0f172a' },
   textArea: { height: 100, textAlignVertical: 'top' },
   inputError: { borderColor: '#ef4444' },
   errorText: { color: '#ef4444', fontSize: 12, marginTop: 4 },
   buttonRow: { flexDirection: 'row', marginTop: 30, justifyContent: 'space-between' },
-  saveButton: { backgroundColor: '#10b981', flex: 1, marginRight: 10, paddingVertical: 14, borderRadius: 8, alignItems: 'center' },
-  cancelButton: { backgroundColor: '#64748b', flex: 1, marginLeft: 10, paddingVertical: 14, borderRadius: 8, alignItems: 'center' },
+  saveButton: { backgroundColor: '#4f46e5', flex: 1, marginRight: 10, paddingVertical: 14, borderRadius: 12, alignItems: 'center', shadowColor: '#4f46e5', shadowOpacity: 0.15, shadowRadius: 6, shadowOffset: { width: 0, height: 3 }, elevation: 2 },
+  cancelButton: { backgroundColor: '#64748b', flex: 1, marginLeft: 10, paddingVertical: 14, borderRadius: 12, alignItems: 'center' },
   buttonText: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' }
 });

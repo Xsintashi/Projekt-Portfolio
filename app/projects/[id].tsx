@@ -33,9 +33,13 @@ export default function ProjectDetailsScreen() {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Technologie</Text>
-          {project.technologies.map((tech, index) => (
-            <Text key={index} style={styles.techItem}>• {tech}</Text>
-          ))}
+          <View style={styles.techContainer}>
+            {project.technologies.map((tech, index) => (
+              <View key={index} style={styles.techBadge}>
+                <Text style={styles.techText}>{tech}</Text>
+              </View>
+            ))}
+          </View>
         </View>
 
         <View style={styles.section}>
@@ -52,16 +56,18 @@ export default function ProjectDetailsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: '#f2f4f8' },
-  centered: { flex: 1, justifyContent: 'center', alignItems: 'center' },
-  notFound: { fontSize: 18, color: '#ef4444', marginBottom: 20 },
+  container: { flex: 1, backgroundColor: '#f8fafc' },
+  centered: { flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#f8fafc' },
+  notFound: { fontSize: 18, color: '#ef4444', marginBottom: 20, fontWeight: '600' },
   content: { padding: 20 },
-  title: { fontSize: 26, fontWeight: 'bold', marginBottom: 20, color: '#1e293b' },
-  section: { backgroundColor: '#ffffff', padding: 16, borderRadius: 10, marginBottom: 16, elevation: 1, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 3 },
-  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 10, color: '#334155', borderBottomWidth: 1, borderBottomColor: '#f1f5f9', paddingBottom: 6 },
-  description: { fontSize: 16, lineHeight: 24, color: '#333333' },
-  techItem: { fontSize: 15, color: '#475569', marginBottom: 4 },
-  year: { fontSize: 16, color: '#0ea5e9', fontWeight: 'bold' },
-  backButton: { backgroundColor: '#64748b', paddingVertical: 12, borderRadius: 8, alignItems: 'center', marginTop: 20 },
-  backButtonText: { color: '#ffffff', fontSize: 16, fontWeight: '600' }
+  title: { fontSize: 28, fontWeight: 'bold', marginBottom: 20, color: '#0f172a' },
+  section: { backgroundColor: '#ffffff', padding: 20, borderRadius: 16, marginBottom: 16, elevation: 2, shadowColor: '#0f172a', shadowOpacity: 0.05, shadowRadius: 10, shadowOffset: { width: 0, height: 2 } },
+  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 12, color: '#1e293b', borderBottomWidth: 1, borderBottomColor: '#f1f5f9', paddingBottom: 6 },
+  description: { fontSize: 15, lineHeight: 24, color: '#334155' },
+  techContainer: { flexDirection: 'row', flexWrap: 'wrap', marginTop: 4 },
+  techBadge: { backgroundColor: '#e0e7ff', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 8, marginRight: 8, marginBottom: 8 },
+  techText: { color: '#4338ca', fontSize: 13, fontWeight: '600' },
+  year: { fontSize: 16, color: '#4f46e5', fontWeight: 'bold' },
+  backButton: { backgroundColor: '#64748b', paddingVertical: 14, borderRadius: 12, alignItems: 'center', marginTop: 20, shadowColor: '#64748b', shadowOpacity: 0.1, shadowRadius: 6, shadowOffset: { width: 0, height: 3 }, elevation: 2 },
+  backButtonText: { color: '#ffffff', fontSize: 16, fontWeight: 'bold' }
 });

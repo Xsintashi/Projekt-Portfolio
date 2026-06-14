@@ -50,6 +50,14 @@ export default function ProfileScreen() {
     setEditing(false);
   };
 
+  const handleStartEdit = () => {
+    setName(profile.name);
+    setBio(profile.bio);
+    setSkills(profile.skills.join(', '));
+    setErrors({});
+    setEditing(true);
+  };
+
   if (editing) {
     return (
       <ScrollView contentContainerStyle={styles.container}>
@@ -93,7 +101,7 @@ export default function ProfileScreen() {
       <View style={styles.header}>
         <Image source={{ uri: profile.avatar }} style={styles.avatar} />
         <Text style={styles.name}>{profile.name}</Text>
-        <TouchableOpacity style={styles.editButton} onPress={() => setEditing(true)}>
+        <TouchableOpacity style={styles.editButton} onPress={handleStartEdit}>
           <Text style={styles.editButtonText}>Edytuj profil</Text>
         </TouchableOpacity>
       </View>
@@ -118,25 +126,25 @@ export default function ProfileScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: { padding: 20, backgroundColor: '#f2f4f8', flexGrow: 1 },
+  container: { padding: 20, backgroundColor: '#f8fafc', flexGrow: 1 },
   header: { alignItems: 'center', marginBottom: 30 },
-  avatar: { width: 120, height: 120, borderRadius: 60, marginBottom: 16, alignSelf: 'center' },
-  name: { fontSize: 26, fontWeight: 'bold', color: '#333', marginBottom: 10 },
-  editButton: { backgroundColor: '#0056b3', paddingVertical: 8, paddingHorizontal: 16, borderRadius: 8 },
-  editButtonText: { color: '#fff', fontWeight: 'bold' },
-  section: { marginBottom: 25, backgroundColor: '#fff', padding: 15, borderRadius: 10, elevation: 2, shadowColor: '#000', shadowOpacity: 0.05, shadowRadius: 5 },
-  sectionTitle: { fontSize: 20, fontWeight: 'bold', marginBottom: 10, color: '#222', borderBottomWidth: 1, borderBottomColor: '#eee', paddingBottom: 5 },
-  description: { fontSize: 16, lineHeight: 24, color: '#555' },
+  avatar: { width: 120, height: 120, borderRadius: 60, marginBottom: 16, alignSelf: 'center', borderWidth: 3, borderColor: '#e2e8f0' },
+  name: { fontSize: 26, fontWeight: 'bold', color: '#0f172a', marginBottom: 12 },
+  editButton: { backgroundColor: '#4f46e5', paddingVertical: 10, paddingHorizontal: 20, borderRadius: 12, shadowColor: '#4f46e5', shadowOpacity: 0.2, shadowRadius: 8, shadowOffset: { width: 0, height: 4 }, elevation: 3 },
+  editButtonText: { color: '#fff', fontWeight: 'bold', fontSize: 15 },
+  section: { marginBottom: 25, backgroundColor: '#fff', padding: 20, borderRadius: 16, elevation: 2, shadowColor: '#0f172a', shadowOpacity: 0.05, shadowRadius: 10, shadowOffset: { width: 0, height: 2 } },
+  sectionTitle: { fontSize: 18, fontWeight: 'bold', marginBottom: 12, color: '#1e293b', borderBottomWidth: 1, borderBottomColor: '#f1f5f9', paddingBottom: 6 },
+  description: { fontSize: 15, lineHeight: 24, color: '#334155' },
   skillsContainer: { flexDirection: 'row', flexWrap: 'wrap' },
-  skillBadge: { backgroundColor: '#e6f2ff', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20, marginRight: 8, marginBottom: 8 },
-  skillText: { color: '#0056b3', fontWeight: '500' },
-  label: { fontSize: 14, fontWeight: '600', marginTop: 12, marginBottom: 6 },
-  input: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#d1d5db', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 15 },
+  skillBadge: { backgroundColor: '#e0e7ff', paddingHorizontal: 12, paddingVertical: 6, borderRadius: 20, marginRight: 8, marginBottom: 8 },
+  skillText: { color: '#4338ca', fontWeight: '600', fontSize: 13 },
+  label: { fontSize: 14, fontWeight: '600', marginTop: 12, marginBottom: 6, color: '#475569' },
+  input: { backgroundColor: '#ffffff', borderWidth: 1, borderColor: '#cbd5e1', borderRadius: 10, paddingHorizontal: 12, paddingVertical: 10, fontSize: 15, color: '#0f172a' },
   textArea: { height: 100, textAlignVertical: 'top' },
   inputError: { borderColor: '#ef4444' },
   errorText: { color: '#ef4444', fontSize: 12, marginTop: 4 },
   buttonRow: { flexDirection: 'row', marginTop: 20, justifyContent: 'space-between' },
-  saveButton: { backgroundColor: '#10b981', flex: 1, marginRight: 10, paddingVertical: 12, borderRadius: 8, alignItems: 'center' },
-  cancelButton: { backgroundColor: '#9ca3af', flex: 1, marginLeft: 10, paddingVertical: 12, borderRadius: 8, alignItems: 'center' },
+  saveButton: { backgroundColor: '#10b981', flex: 1, marginRight: 10, paddingVertical: 12, borderRadius: 10, alignItems: 'center' },
+  cancelButton: { backgroundColor: '#64748b', flex: 1, marginLeft: 10, paddingVertical: 12, borderRadius: 10, alignItems: 'center' },
   buttonText: { color: '#fff', fontWeight: 'bold', fontSize: 16 }
 });

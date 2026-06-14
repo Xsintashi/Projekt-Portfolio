@@ -9,10 +9,10 @@ export default function RootLayout() {
       <ProfileProvider>
         <Tabs
           screenOptions={{
-            tabBarActiveTintColor: '#0056b3',
-            tabBarInactiveTintColor: '#999999',
+            tabBarActiveTintColor: '#4f46e5',
+            tabBarInactiveTintColor: '#64748b',
             headerShown: false,
-            tabBarStyle: { backgroundColor: '#ffffff' }
+            tabBarStyle: { backgroundColor: '#ffffff', borderTopColor: '#f1f5f9' }
           }}
         >
           <Tabs.Screen

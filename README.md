@@ -17,8 +17,8 @@ Aplikacja została oparta na architekturze z użyciem `Context API` do zarządza
 ## 🛠️ Technologie i Biblioteki
 
 - **React Native** / **Expo** (wersja SDK 54)
-- **React Navigation** (Nawigacja po zakładkach `@react-navigation/bottom-tabs` oraz nawigacja stosowa `@react-navigation/native-stack`)
-- **AsyncStorage** (`@react-native-async-storage/async-storage`) - do lokalnej bazy danych.
+- **Expo Router** (System nawigacji oparty na strukturze plików w katalogu `/app`)
+- **AsyncStorage** (`@react-native-async-storage/async-storage`) - do lokalnej bazy danych (trwałość danych profilu i projektów).
 
 ## 📱 Instrukcja uruchomienia
 
@@ -44,9 +44,9 @@ npx expo start
 - **Na emulatorze:** Po uruchomieniu serwera, wciśnij klawisz `a`, aby uruchomić aplikację na dostępnym emulatorze Androida (jeśli posiadasz zainstalowane Android Studio) lub `i` dla symulatora iOS (tylko na systemie macOS).
 
 ## 📁 Struktura projektu
-- `App.js` - Główny punkt wejścia aplikacji.
-- `src/navigation/` - Pliki odpowiedzialne za konfigurację routingu i zakładek.
-- `src/screens/` - Pliki poszczególnych widoków (ekranów).
-- `src/components/` - Elementy reużywalne, np. karta projektu.
-- `src/context/` - Zarządzanie globalnym stanem aplikacji i komunikacja z AsyncStorage.
-- `src/data/initialData.json` - Plik konfiguracyjny z łatwymi w edycji danymi startowymi.
+- `index.js` - Główny punkt wejścia aplikacji.
+- `app/` - Ekrany aplikacji i konfiguracja nawigacji przy użyciu Expo Router (`_layout.tsx`, `index.tsx`, `contact.tsx`, oraz podkatalog `projects/` dla listy, formularza i szczegółów).
+- `context/` - Zarządzanie stanem aplikacji (kontekst profilu i projektów).
+- `utils/` - Narzędzia pomocnicze (obsługa zapisu i odczytu z `AsyncStorage`).
+- `src/components/` - Komponenty reużywalne, np. `ProjectCard.tsx`.
+- `src/data/initialData.json` - Plik z łatwymi w edycji danymi startowymi profilu i projektów.
